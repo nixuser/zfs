@@ -25,4 +25,17 @@ sdg      8:96   0    1G  0 disk
 6. Verify output
    ` zpool list`
    `zpool status`
+   
+ ## How to add SSH agent keys
+``` 
+ssh-agent.exe > output
+source output
+ssh-add ./.vagrant/machines/*/virtualbox/private_key
+vagrant ssh server -- -A
+```
+On server system check that client is available. SSH should not ask password.
+```
+[vagrant@server ~]$ ssh 10.0.0.40 hostname
+srv02
+```
     
